@@ -3,24 +3,28 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		402E2354269CDF7F008ADAD5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402E2353269CDF7F008ADAD5 /* AppDelegate.swift */; };
-		402E2356269CDF7F008ADAD5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402E2355269CDF7F008ADAD5 /* ViewController.swift */; };
 		402E2358269CDF80008ADAD5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 402E2357269CDF80008ADAD5 /* Assets.xcassets */; };
 		402E235B269CDF80008ADAD5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 402E2359269CDF80008ADAD5 /* Main.storyboard */; };
+		402E2364269CE16F008ADAD5 /* TriangleMKVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402E2363269CE16F008ADAD5 /* TriangleMKVC.swift */; };
+		402E2366269CE1BD008ADAD5 /* TriangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402E2365269CE1BD008ADAD5 /* TriangleView.swift */; };
+		402E2368269CF53D008ADAD5 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 402E2367269CF53D008ADAD5 /* Shaders.metal */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		402E2350269CDF7F008ADAD5 /* HelloTriangle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloTriangle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		402E2353269CDF7F008ADAD5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		402E2355269CDF7F008ADAD5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		402E2357269CDF80008ADAD5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		402E235A269CDF80008ADAD5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		402E235C269CDF80008ADAD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		402E235D269CDF80008ADAD5 /* HelloTriangle.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HelloTriangle.entitlements; sourceTree = "<group>"; };
+		402E2363269CE16F008ADAD5 /* TriangleMKVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriangleMKVC.swift; sourceTree = "<group>"; };
+		402E2365269CE1BD008ADAD5 /* TriangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriangleView.swift; sourceTree = "<group>"; };
+		402E2367269CF53D008ADAD5 /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +58,9 @@
 			isa = PBXGroup;
 			children = (
 				402E2353269CDF7F008ADAD5 /* AppDelegate.swift */,
-				402E2355269CDF7F008ADAD5 /* ViewController.swift */,
+				402E2363269CE16F008ADAD5 /* TriangleMKVC.swift */,
+				402E2365269CE1BD008ADAD5 /* TriangleView.swift */,
+				402E2367269CF53D008ADAD5 /* Shaders.metal */,
 				402E2357269CDF80008ADAD5 /* Assets.xcassets */,
 				402E2359269CDF80008ADAD5 /* Main.storyboard */,
 				402E235C269CDF80008ADAD5 /* Info.plist */,
@@ -89,8 +95,9 @@
 		402E2348269CDF7F008ADAD5 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1250;
-				LastUpgradeCheck = 1250;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					402E234F269CDF7F008ADAD5 = {
 						CreatedOnToolsVersion = 12.5.1;
@@ -132,7 +139,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				402E2356269CDF7F008ADAD5 /* ViewController.swift in Sources */,
+				402E2368269CF53D008ADAD5 /* Shaders.metal in Sources */,
+				402E2364269CE16F008ADAD5 /* TriangleMKVC.swift in Sources */,
+				402E2366269CE1BD008ADAD5 /* TriangleView.swift in Sources */,
 				402E2354269CDF7F008ADAD5 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -185,9 +194,11 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -246,9 +257,11 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -272,15 +285,19 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = HelloTriangle/HelloTriangle.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = JLYDZGA2RC;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = HelloTriangle/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.action-games";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 14;
 				PRODUCT_BUNDLE_IDENTIFIER = CGC.HelloTriangle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -293,15 +310,19 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = HelloTriangle/HelloTriangle.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = JLYDZGA2RC;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = HelloTriangle/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.action-games";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 14;
 				PRODUCT_BUNDLE_IDENTIFIER = CGC.HelloTriangle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
